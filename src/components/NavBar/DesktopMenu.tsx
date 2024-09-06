@@ -1,18 +1,10 @@
 "use client";
 
 import { DesktopMenuProps } from "@/interfaces/types";
+import { sections } from "@/mocks/mocks";
 import React from "react";
 
 const DesktopMenu: React.FC<DesktopMenuProps> = ({ handleScrollToSection }) => {
-  const sections = [
-    "introdução",
-    "sobre-Mim",
-    "experiências",
-    "por-que-Eu",
-    "projetos",
-    "expectativas",
-  ];
-
   return (
     <div
       data-testid="menu-items-desktop"
@@ -20,7 +12,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ handleScrollToSection }) => {
     >
       {sections.map((section) => {
         // Format section title and ID
-        const formattedSection = section.replace("-", " "); // Replace hyphen with space
+        const formattedSection = section.replace(/-/g, " "); // Replace hyphen with space
         const sectionId = section.replace(/\s+/g, "-").toLowerCase(); // ID with hyphen
 
         return (

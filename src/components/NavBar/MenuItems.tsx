@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { menuVariants } from "@/animations/NavBar";
 import { MenuItemsProps } from "@/interfaces/types";
+import { sections } from "@/mocks/mocks";
 
 const MenuItems: React.FC<MenuItemsProps> = ({
   handleScrollToSection,
@@ -17,14 +18,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
       exit="hidden"
       transition={{ duration: 0.3 }}
     >
-      {[
-        "introdução",
-        "sobre-Mim",
-        "experiências",
-        "por-que-Eu",
-        "projetos",
-        "expectativas",
-      ].map((section) => (
+      {sections.map((section) => (
         <button
           key={section}
           onClick={() => {
