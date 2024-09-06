@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-lightBackground text-lightText;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  }
+
+  .dark body {
+    @apply bg-darkBackground text-darkText;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  }
+}
+
+:root {
+  --foreground-rgb: 26, 32, 44;
+  /* Cor do texto no modo claro */
+  --background-start-rgb: 255, 255, 255;
+  /* Cor de fundo inicial no modo claro */
+  --background-end-rgb: 214, 219, 220;
+  /* Cor de fundo final no modo claro */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 226, 232, 240;
+    /* Cor do texto no modo escuro */
+    --background-start-rgb: 26, 32, 44;
+    /* Cor de fundo inicial no modo escuro */
+    --background-end-rgb: 0, 0, 0;
+    /* Cor de fundo final no modo escuro */
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
